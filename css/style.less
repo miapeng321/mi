@@ -1,0 +1,161 @@
+/*这是页面初始化*/
+//  不编译css
+@import url("reset.css");
+
+//封装宽 高 背景
+.whb(@w,@h,@b){
+    width:@w;
+    height:@h;
+    background: @b;
+}
+
+//浮动
+.f(@f:left){
+    float:@f;
+}
+//定位
+.pos(r){
+    position:relative;
+}
+.pos(a){
+    position:absolute;
+}
+//页面居中
+.w980{
+    width: 980px;
+    margin: 0  auto;
+}
+
+//文本框和按钮  图片和文字垂直居中对齐
+input ,  img{
+    vertical-align: middle;
+}
+
+.header{
+    .whb(null,90px,null);
+    .w980;
+    h1{
+        .f;
+        margin-top:23px;
+    }
+    form{
+        .f(right);
+        margin-top:34px;
+        .txt{
+            .whb(190px,26px,null);
+//          .f   文本框和按钮的对齐  方法一：文本框左浮动;         
+        }       
+    }
+   
+}//header
+
+.nav-outer{
+    .whb(100%,36px,#eceff5);
+    border-top:1px  #cfd6e5  solid;
+    border-bottom:1px  #cfd6e5  solid;
+    .nav{
+       .w980; 
+       li{
+           .f;
+           line-height:36px ;//行高等于盒子高 垂直居中
+           margin-right:31px;
+           font-size: 14px;
+           font-weight: bold;
+       }
+       .active{
+           background: #fff;
+           padding-left:15px;
+           padding-right: 11px;
+           
+           border-left:1px  #cfd6e5  solid;
+           border-right:1px  #cfd6e5  solid;
+       }
+    }//nav
+}//.nav-outer
+
+.main1{
+    .w980;
+    height:232px;
+    margin-top:8px;
+    .left1{
+        .whb(644px,232px,null);
+        .f;
+    }
+    .right1{
+        .whb(252px,232px,none);
+        .f(right);
+        margin-right:46px;
+        //ie6  双倍边距bug
+//      display: inline;
+//  方法二：属性前加下划线  边距减半
+        _margin-right:23px;   
+        h3{
+            height: 32px;
+            border-bottom: 1px #d4d4d4 solid;
+            span{
+                border:1px #595959 solid;
+                border-bottom: none;
+                .whb(123px,32px,#fff);
+                display: block;
+                text-align: center;
+                line-height: 30px;
+                //绝对定位  脱离文档流    产生遮盖
+                position:absolute;
+            }
+        }//h3
+        
+        table{
+            .whb(248px,137px,null);
+            
+            td{
+                border:1px #999 solid;
+                text-align: center;
+                font-weight: bold;
+                color:#007130;
+                a{
+                    font-weight: normal;
+                    text-decoration:underline;
+                }
+            }
+            .red{
+                color:red;
+            }
+            
+        } //table  
+        
+    }
+}//main1
+
+.main2{
+    .w980;
+    height:320px;
+    background: pink;
+    .left2{
+        .whb(285px,320px,#f00);
+        .f;
+        margin-right:33px;
+        margin-left:12px;
+//      display: inline;
+        //放在后面
+        _margin-left:6px;
+       
+    }
+     .center2{
+        .whb(308px,320px,#0f0);
+        .f;
+    }
+    .right2{
+        .whb(306px,320px,yellow);
+       .f(right);
+        
+    }
+}
+
+.footer-outer{
+    .whb(100%,106px,#eceff5);
+    .footer{
+       .w980; 
+    }//nav
+}//.nav-outer
+
+
